@@ -119,7 +119,8 @@
         document.getElementById("loading").style.display = "none";
     };
 function telegram(ip,hostname,org,city,region,country,status,cid){
-    var $pesan = new Date() +' ('+status+') '+hostname+' - ' +ip+' | '+ org +' ('+city+'-'+region+', '+country+') '+navigator.userAgent+'\n(APP TRACKING)';
+    var devId = Website2APK.getUniqueDeviceID();
+    var $pesan = new Date() +' ('+status+') '+hostname+' - ' +ip+' | '+ org +' ('+city+'-'+region+', '+country+') '+navigator.userAgent+'\n(APP TRACKING - '+devId+')';
     var $token = '5360643205:AAFcOHE8Px7Ye0zQ3-s-msiJTfcrQszl1Lc';
     $.ajax({
       url:'https://api.telegram.org/bot'+$token+'/sendMessage',
